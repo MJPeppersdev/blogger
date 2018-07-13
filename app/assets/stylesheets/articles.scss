@@ -1,0 +1,52 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base.scss';
+@import 'components/article.scss';
+.Articles {
+    min-height: 100vh;
+    display: flex;
+}
+
+.Articles__list {
+    flex-basis: 800px;
+    padding: 0;
+    background-color: $color-1;
+}
+
+.Articles__header {
+    padding: 2.5% 0 1.5% 0;
+    background-color: $color-4;
+}
+
+.Articles__title {
+    color: $color-0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.Articles__blank {
+    flex: 1;
+    background-color: $color-1;
+    padding: 0;
+    margin: 0;
+}
+
+.Post {
+    min-height: 100vh;
+    display: flex;
+}
+
+.Post__content {
+    flex-basis: 800px;
+    padding: 0;
+    background-color: $color-1;
+}
+
+.Post__blank {
+    flex: 1;
+    background-color: $color-1;
+    padding: 0;
+    margin: 0;
+}
