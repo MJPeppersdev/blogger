@@ -1,0 +1,12 @@
+<div class="Comment">
+	<p class="notice"></p>
+	<h3 class="Comment__name"><%= comment.name %></h3>
+	<p class="Comment__body"><%= comment.body %></p>
+	<% if admin_signed_in? %>
+		<p class="Comment__delete">
+		  <%= link_to 'Delete Comment', article_comment_path(@article, comment),
+		               method: :delete,
+		               data: { confirm: 'Are you sure?' } %>
+		</p>
+	<% end %>
+</div>
