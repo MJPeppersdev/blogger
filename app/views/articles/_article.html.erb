@@ -1,0 +1,47 @@
+<article class="Article">
+    <img class="Article__previewImage" src="/images/iceland.jpg">
+    <div class="Article__content">
+        <h1 class="Article__title"><%= article.title %></h1>
+        <% if list %>
+            <p class="Article__blurb"><%= article.blurb %></p>
+        <% end %>
+        <div class="Article__meta">
+            <div class="Article__edit">
+                <img class="Article__icon" src="/images/topics.svg">
+                <%= link_to(edit_article_path(article)) do %>
+                    <h4 class="Article__attr">Edit</h4>
+                <% end %>
+                <%= link_to(article_path(article), method: :delete) do %>
+                    <h4 class="Article__attr">Delete</h4>
+                <% end %>
+            </div>
+            <div class="Article__tags">
+                <img class="Article__icon" src="/images/tag.svg">
+                <% article.tag_list.each_with_index do |tag, index| %>
+                    <%= link_to(tag_path(tag)) do %>
+                        <% if index == article.tag_list.size - 1%>
+                         <h4 class="Article__attr"><%= tag %></h4>
+                        <% else %>
+                            <h4 class="Article__attr"><%= tag %>,</h4>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="Article__time">
+                <img class="Article__icon" src="/images/time.svg">
+                <h4 class="Article__attr"><%= article.updated_at.strftime('%b %d, %Y') %></h4>
+            </div>
+        </div>
+        <% if list %>
+            <%= link_to(article_path(article)) do %>
+                <button class="dark-white">
+                    Read more
+                </button>
+            <% end %>
+        <% else %>
+            <% article.text.split("\n").each do |para| %>
+                <p class="Article__body"><%= para %></p>
+            <% end %>
+        <% end %>
+    </div>
+</article>
