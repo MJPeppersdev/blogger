@@ -1,0 +1,14 @@
+@import 'base.scss';
+.Home {}
+
+.Home__title {}
+
+.Home__para {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    margin: 1.5% auto;
+    strong {
+        color: $color-4;
+    }
+}
