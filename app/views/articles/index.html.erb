@@ -1,0 +1,14 @@
+<% content_for :header do %>
+    <title>crunchyCoder Blog</title>
+
+<% end %>
+
+<section class="Articles">
+    <div class="Articles__list">
+        <div class="Articles__header">
+            <h1 class="Articles__title">My Articles</h1>
+        </div>
+        <%= render :partial => 'article', :collection => @articles, :locals => {list: true} %>
+    </div>
+    <dir class="Articles__blank"></dir>
+</section>
