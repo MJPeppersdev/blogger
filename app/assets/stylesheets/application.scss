@@ -1,0 +1,73 @@
+@import 'base.scss';
+body {
+    margin: 0;
+    padding: 0;
+    #content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        nav {
+            flex-basis: 250px;
+            flex-direction: row;
+            min-height: 100vh;
+            overflow-y: scroll;
+        }
+        main {
+            flex: 1;
+            flex-direction: row;
+            display: block;
+            max-height: 100vh;
+            overflow-y: scroll;
+        }
+    }
+    a {
+        text-decoration: none !important;
+        color: $color-2;
+        >* {
+            border-bottom: 1px dotted $color-link;
+            &:hover {
+                color: $color-link;
+            }
+        }
+    }
+    p {
+        line-height: 25px;
+    }
+}
+
+button {
+    border: none;
+    padding: 10px 17px;
+    cursor: pointer;
+}
+
+button.dark-white {
+    background-color: $color-2;
+    color: $color-0;
+    border: 2px solid $color-2;
+    @include smoothTransition;
+    &:hover {
+        background-color: $color-0;
+        color: $color-2;
+        @include smoothTransition;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        #content {
+            flex-direction: column !important;
+            main {
+                max-height: none;
+            }
+            nav {
+                min-height: 50px;
+                flex-basis: auto;
+                overflow-y: hidden;
+            }
+        }
+    }
+}
